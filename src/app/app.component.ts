@@ -13,15 +13,18 @@ export class AppComponent {
     todos: Todo[] = [
         {
             title: 'Angular 2',
-            completed: false
+            completed: false,
+            changing: false
         },
         {
             title:'TypeScript',
-            completed: false
+            completed: false,
+            changing: false
         },
         {
             title:'Fan',
-            completed: false
+            completed: false,
+            changing: false
         }
     
     ];
