@@ -1,0 +1,27 @@
+<div class="todo-item" [class.completed]="todo.completed" *ngIf="!todo.changing">
+    <button type="button" class="btn btn-default" (click)="toggle()"> 
+                <i [ngClass]="{'fa':true, 'fa-check-square-o fa-lg' : todo.completed,
+                 'fa-square-o' : !todo.completed, 'fa-lg':true}" aria-hidden="true"></i>
+            </button>
+    <span class="title">{{todo.title}}</span>
+    <div class="actions">
+        <button type="button" class="btn btn-default" (click)="onChange()">
+                    <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+                </button>
+        <button type="button" class="btn btn-default" (click)="onDelete()"> 
+                    <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                </button>
+    </div>
+</div>
+
+<div class="todo-item" [class.completed]="todo.completed" *ngIf="todo.changing">
+    <form class="todo-form" (ngSubmit)="onCompleteEdit()">
+        <input type="text" name="title" [(ngModel)]="todo.title" placeholder="" required>
+    </form>
+    <div class="actions">
+        <button type="button" class="btn btn-default" (click)="onChange()">
+                    <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+                </button>
+    </div>
+
+</div>

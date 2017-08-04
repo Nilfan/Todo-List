@@ -1,8 +1,14 @@
 <header>
-    <p>{{title}}</p>
+    <h3> <span>{{title}}</span></h3>
 </header>
 
 <main>
-    <todo-form (add)="create($event)" ></todo-form>
-    <todo-list [todos]="todos"></todo-list>
+    <div class="container">
+        <div class="row">
+                <div class="col-xs-6 col-md-12">
+                    <todo-form (add)="create($event)" ></todo-form>
+                    <todo-list [todos]="todos"></todo-list>
+                </div>
+        </div>
+    </div>
 </main>

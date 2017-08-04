@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Todo } from './shared/todo';
+
 
 @Component({
   moduleId: module.id,
@@ -7,8 +9,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = 'Angular 2';
-    todos: Todo[] = todos
+    title = 'Todo-List';
+    todos: Todo[] = [
+        {
+            title: 'Angular 2',
+            completed: false
+        },
+        {
+            title:'TypeScript',
+            completed: false
+        },
+        {
+            title:'Fan',
+            completed: false
+        }
+    
+    ];
 
 
     create(title: string){
